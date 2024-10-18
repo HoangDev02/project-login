@@ -1,2 +1,3 @@
-Cài Đặt Các Gói Cần Thiết: npm install \n
+Cài Đặt Các Gói Cần Thiết: npm install
+
 Chạy code : npm start
