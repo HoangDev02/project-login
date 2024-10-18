@@ -1,0 +1,28 @@
+<header class="fixed top-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-purple-400 p-5 shadow-lg z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="../../public/logo.png" alt="Logo" class="w-12 h-12 rounded-full shadow-lg" />
+            <span class="text-white text-3xl font-bold tracking-wide">MyApp</span>
+        </div>
+
+        <div class="flex space-x-4">
+            <div ng-if="!headerCtrl.isLoggedIn()">
+                <a ui-sref="login"
+                    class="text-white font-semibold px-6 py-2 rounded-full bg-transparent border border-white hover:bg-blue-600 hover:border-blue-600 transition duration-300 shadow-md cursor-pointer">Login</a>
+                <a ui-sref="register"
+                    class="text-white font-semibold px-6 py-2 rounded-full bg-transparent border border-white hover:bg-purple-600 hover:border-purple-600 transition duration-300 shadow-md cursor-pointer">Register</a>
+            </div>
+            <div ng-if="headerCtrl.isLoggedIn()" class="relative group p-2">
+                <div class="flex items-center space-x-3 cursor-pointer">
+                    <img src="../../public/avatar.png" alt="Avatar" class="w-10 h-10 rounded-full shadow-lg" />
+                    <span class="text-white font-semibold">{{ headerCtrl.username }}</span>
+                </div>
+                <div
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-20 hidden group-hover:block">
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-gray-200"
+                        ng-click="headerCtrl.logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
